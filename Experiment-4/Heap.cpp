@@ -39,6 +39,17 @@ void insert(int val) {
     heapSize++;
     heapifyUp(heapSize-1);
 }
+void deleteRoot() {
+
+if(heapSize==0) {
+cout<<"underflow" ;
+return ;
+}
+heap[0] = heap[heapSize-1];
+heapSize--;
+heapifyDown(0);
+
+}
 
 void deletebyvalue(int val) {
 
@@ -64,7 +75,12 @@ void deletebyvalue(int val) {
     heapifyDown(indx);
     heapifyUp(indx);
 }
+int search(int heap[], int heapSize, int val){
+ for(int i=0;i<heapSize;i++){
+ if (heap[i]==val){
+  return i;}}
 
+return -1 ;}
 int main() {
 
 insert(1);
@@ -76,7 +92,13 @@ insert(27);
 deletebyvalue(9);
 cout<<"Final heap : "<<endl;
 for(int i =0;i<heapSize;i++) cout<<heap[i]<< " ";
-
-
+    int key = 12;
+ int result = search(heap,heapSize,key);
+    if(result!=-1){
+        cout<<"Element found at index : "<< result<<endl;}
+    else{
+        cout<<"Element not found" <<endl;}
+  return 0;
 }
+
 
