@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shortest Path Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Shortest Path Visualizer (Dijkstra)</h1>
+
+<div class="controls">
+    <label>Start:</label>
+    <select id="start">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+    </select>
+
+    <label>End:</label>
+    <select id="end">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+    </select>
+
+    <button onclick="findPath()">Find Path</button>
+</div>
+
+<div class="graph-container">
+
+    <svg id="graph" width="500" height="400">
+
+        
+        <line id="AB" x1="100" y1="100" x2="300" y2="100" />
+        <line id="AC" x1="100" y1="100" x2="100" y2="300" />
+        <line id="BC" x1="300" y1="100" x2="100" y2="300" />
+        <line id="BD" x1="300" y1="100" x2="300" y2="300" />
+        <line id="CD" x1="100" y1="300" x2="300" y2="300" />
+
+       
+        <circle id="A" cx="100" cy="100" r="20" />
+        <circle id="B" cx="300" cy="100" r="20" />
+        <circle id="C" cx="100" cy="300" r="20" />
+        <circle id="D" cx="300" cy="300" r="20" />
+
+        <text id="wAB" x="190" y="95">2</text>
+        <text id="wAC" x="80" y="200">4</text>
+        <text id="wBC" x="190" y="200">1</text>
+        <text id="wBD" x="310" y="200">7</text>
+        <text id="wCD" x="190" y="320">3</text>
+
+        <text x="95" y="105">A</text>
+        <text x="295" y="105">B</text>
+        <text x="95" y="305">C</text>
+        <text x="295" y="305">D</text>
+
+    </svg>
+
+</div>
+
+<div id="output"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
